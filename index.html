@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hogwarts Task List</title>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <h1>To Do List</h1>
+    <form>
+      <label for="task list">Task</label>
+      <input
+        type="text"
+        id="new-task"
+        name="Task"
+        placeholder="What do you have planned today?"
+      />
+      <input type="submit" id="submit-task" value="Add task" />
+    </form>
+
+    <h2>Tasks</h2>
+    <ul id="task-list">
+      <li>
+        task1
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+      </li>
+    </ul>
+  </body>
+</html>
