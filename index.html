@@ -5,24 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hogwarts Task List</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
-    <h1>To Do List</h1>
-    <form>
-      <label for="task list">Task</label>
-      <input
-        type="text"
-        id="new-task"
-        name="Task"
-        placeholder="What do you have planned today?"
-      />
-      <input type="submit" id="submit-task" value="Add task" />
-    </form>
+    <div class="flex main">
+      <h1>To Do List</h1>
+      <form class="flex">
+        <input
+          type="text"
+          id="new-task"
+          name="Task"
+          placeholder="What do you have planned today?"
+        />
+        <input type="submit" id="submit-task" value="Expecto Patronum" />
+      </form>
 
-    <h2>Tasks</h2>
-    <input id="filter" placeholder="Filter..." />
-    <ul id="task-list"></ul>
-    <button id="clear-all">Clear All</button>
+      <h2>Tasks</h2>
+      <input id="filter" placeholder="ACCIO. . ." />
+      <ul id="task-list"></ul>
+      <button id="clear-all">Obliviate</button>
+    </div>
   </body>
 </html>
