@@ -1,0 +1,28 @@
+:root {
+  /* Gryffindor's Color*/
+
+  --gf-red-main: rgb(116, 0, 1);
+  --gf-red2: rgb(174, 0, 1);
+  --gf-yellow-main: rgb(238, 186, 48);
+  --gf-yellow2: rgb(211, 166, 37);
+
+  /* Hufflepuff's Color*/
+
+  --hp-yellow-main: rgb(236, 185, 57);
+  --hp-yellow2: rgb(240, 199, 94);
+  --hp-brown-main: rgb(114, 98, 85);
+  --hp-brown2: rgb(55, 46, 41);
+
+  /*Ravenclaw's Color*/
+
+  --rc-blue-main: rgb(14, 26, 64);
+  --rc-blue2: rgb(34, 47, 91);
+  --rc-grey: rgb(93, 93, 93);
+  --rc-yellow: rgb(148, 107, 45);
+
+  /* Slytherin's Color*/
+  --sl-green-main: rgb(26, 71, 42);
+  --sl-green2: rgb(42, 98, 61);
+  --sl-grey-main: rgb(93, 93, 93);
+  --sl-grey2: rgb(170, 170, 170);
+}

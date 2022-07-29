@@ -1,9 +1,34 @@
 const form = document.querySelector('form');
 const taskInput = document.getElementById('new-task');
+const submitBtn = document.getElementById('submit-task');
 const taskList = document.querySelector('#task-list');
 const clearBtn = document.getElementById('clear-all');
 const filter = document.querySelector('#filter');
+const house = document.querySelector('ul.house');
+const main = document.querySelector('div.main');
 
+// check local storage
+let tasks = JSON.parse(localStorage.getItem('tasks'));
+
+if (localStorage.getItem('tasks') === null) {
+  tasks = [];
+} else {
+  tasks.forEach(function (task) {
+    const newLi = document.createElement('li');
+    const newContent = document.createTextNode(task);
+    const newDelete = document.createElement('button');
+
+    newDelete.classList.add('delete');
+    newLi.classList.add('task-item');
+
+    newLi.append(newContent, newDelete);
+
+    console.log(newLi);
+    taskList.appendChild(newLi);
+  });
+}
+
+//submit a task
 form.addEventListener('submit', submitTask);
 
 function submitTask(e) {
@@ -11,39 +36,9 @@ function submitTask(e) {
 
   const newTask = taskInput.value;
 
-  localStorage.setItem('task', newTask);
-  console.log(`The new task is: ${localStorage.getItem('task')}`);
-
-  //check the local storage
-  let tasks;
-  if (localStorage.getItem('tasks') === null) {
-    tasks = [];
-  } else {
-    tasks = JSON.parse(localStorage.getItem('tasks'));
-  }
-
   tasks.push(newTask);
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
-
-const tasks = JSON.parse(localStorage.getItem('tasks'));
-
-tasks.forEach(function (task) {
-  const newLi = document.createElement('li');
-  const newContent = document.createTextNode(task);
-  const newDelete = document.createElement('button');
-
-  newDelete.classList.add('delete');
-  newLi.classList.add('task-item');
-
-  newLi.append(newContent, newDelete);
-
-  console.log(newLi);
-  taskList.appendChild(newLi);
-});
-
-//placeholder for last task inserted
-taskInput.setAttribute('placeholder', localStorage.getItem('task'));
 
 //delete task
 
@@ -99,4 +94,50 @@ function filterTasks(e) {
       task.style.display = 'none';
     }
   });
+}
+
+// HOGWART HOUSE THEME w/ Event Delegation
+
+house.addEventListener('click', changeTheme);
+
+function changeTheme(e) {
+  localStorage.setItem('house', e.target.id);
+  location.reload();
+}
+
+let houseTheme = localStorage.getItem('house');
+
+switch (houseTheme) {
+  case 'gryffindor':
+    main.style.backgroundColor = 'var(--gf-red-main)';
+    main.style.color = 'var(--gf-yellow-main)';
+    submitBtn.style.backgroundColor = 'var(--gf-red2)';
+    submitBtn.style.color = 'white';
+    clearBtn.style.backgroundColor = 'var(--gf-red2)';
+    clearBtn.style.color = 'white';
+    break;
+  case 'hufflepuff':
+    main.style.backgroundColor = 'var(--hp-yellow-main)';
+    main.style.color = 'var(--hp-brown2)';
+    submitBtn.style.backgroundColor = 'var(--hp-yellow2)';
+    submitBtn.style.color = 'white';
+    clearBtn.style.backgroundColor = 'var(--hp-yellow2)';
+    clearBtn.style.color = 'white';
+    break;
+  case 'ravenclaw':
+    main.style.backgroundColor = 'var(--rc-blue-main)';
+    main.style.color = 'white';
+    submitBtn.style.backgroundColor = 'var(--rc-blue2)';
+    submitBtn.style.color = 'white';
+    clearBtn.style.backgroundColor = 'var(--rc-blue2)';
+    clearBtn.style.color = 'white';
+    break;
+  case 'slytherin':
+    main.style.backgroundColor = 'var(--sl-green-main)';
+    main.style.color = 'black';
+    submitBtn.style.backgroundColor = 'var(--sl-green2)';
+    submitBtn.style.color = 'white';
+    clearBtn.style.backgroundColor = 'var(--sl-green2)';
+    clearBtn.style.color = 'white';
+    break;
 }
