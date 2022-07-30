@@ -80,7 +80,9 @@ ul#task-list {
 .house {
   justify-content: space-evenly;
   padding: 0;
+  flex-flow: row wrap;
 }
+
 .space {
   justify-content: center;
 }
@@ -95,3 +97,9 @@ ul#task-list {
 }
 
 /*ID*/
+svg#gryffindor,
+svg#hufflepuff,
+svg#ravenclaw,
+svg#slytherin {
+  width: 11rem;
+}
