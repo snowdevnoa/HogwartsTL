@@ -5,7 +5,7 @@ const taskList = document.querySelector('#task-list');
 const clearBtn = document.getElementById('clear-all');
 const filter = document.querySelector('#filter');
 const house = document.querySelector('ul.house');
-const main = document.querySelector('div.main');
+const main = document.querySelector('body');
 
 // check local storage
 let tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -118,7 +118,7 @@ switch (houseTheme) {
     break;
   case 'hufflepuff':
     main.style.backgroundColor = 'var(--hp-yellow-main)';
-    main.style.color = 'var(--hp-brown2)';
+    main.style.color = 'black';
     submitBtn.style.backgroundColor = 'var(--hp-yellow2)';
     submitBtn.style.color = 'white';
     clearBtn.style.backgroundColor = 'var(--hp-yellow2)';
