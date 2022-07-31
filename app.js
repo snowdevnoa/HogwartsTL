@@ -101,6 +101,7 @@ function filterTasks(e) {
 house.addEventListener('click', changeTheme);
 
 function changeTheme(e) {
+  console.log(e.target.id);
   localStorage.setItem('house', e.target.id);
   location.reload();
 }
@@ -109,7 +110,8 @@ let houseTheme = localStorage.getItem('house');
 
 switch (houseTheme) {
   case 'gryffindor':
-    main.style.backgroundColor = 'var(--gf-red-main)';
+    main.style.backgroundImage =
+      'linear-gradient(to bottom, var(--gf-red-main), black)';
     main.style.color = 'var(--gf-yellow-main)';
     submitBtn.style.backgroundColor = 'var(--gf-red2)';
     submitBtn.style.color = 'white';
@@ -117,15 +119,17 @@ switch (houseTheme) {
     clearBtn.style.color = 'white';
     break;
   case 'hufflepuff':
-    main.style.backgroundColor = 'var(--hp-yellow-main)';
-    main.style.color = 'black';
+    main.style.backgroundImage =
+      'linear-gradient(to bottom, var(--hp-yellow-main), black)';
+    main.style.color = 'white';
     submitBtn.style.backgroundColor = 'var(--hp-yellow2)';
     submitBtn.style.color = 'white';
     clearBtn.style.backgroundColor = 'var(--hp-yellow2)';
     clearBtn.style.color = 'white';
     break;
   case 'ravenclaw':
-    main.style.backgroundColor = 'var(--rc-blue-main)';
+    main.style.backgroundImage =
+      'linear-gradient(to bottom, var(--rc-blue-main), black)';
     main.style.color = 'white';
     submitBtn.style.backgroundColor = 'var(--rc-blue2)';
     submitBtn.style.color = 'white';
@@ -133,8 +137,9 @@ switch (houseTheme) {
     clearBtn.style.color = 'white';
     break;
   case 'slytherin':
-    main.style.backgroundColor = 'var(--sl-green-main)';
-    main.style.color = 'black';
+    main.style.backgroundImage =
+      'linear-gradient(to bottom, var(--sl-green-main), black)';
+    main.style.color = 'var(--sl-grey2)';
     submitBtn.style.backgroundColor = 'var(--sl-green2)';
     submitBtn.style.color = 'white';
     clearBtn.style.backgroundColor = 'var(--sl-green2)';

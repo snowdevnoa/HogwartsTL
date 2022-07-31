@@ -44,7 +44,7 @@ input#filter {
 input#submit-task {
   border-radius: 1em;
   cursor: pointer;
-  margin: 3px;
+  margin: 5px;
 }
 
 ul {
@@ -64,6 +64,13 @@ ul#task-list {
   text-align: center;
 }
 
+button.delete {
+  margin-left: 10px;
+  color: red;
+}
+button.delete::after {
+  content: 'x';
+}
 /*Classes*/
 .flex {
   display: flex;
@@ -97,9 +104,22 @@ ul#task-list {
 }
 
 /*ID*/
-svg#gryffindor,
-svg#hufflepuff,
-svg#ravenclaw,
-svg#slytherin {
+ul.house li {
   width: 11rem;
+}
+
+svg#gryffindor:hover {
+  fill: var(--gf-red2);
+}
+
+svg#hufflepuff:hover {
+  fill: var(--hp-yellow2);
+}
+
+svg#ravenclaw:hover {
+  fill: var(--rc-blue2);
+}
+
+svg#slytherin:hover {
+  fill: var(--sl-green2);
 }
