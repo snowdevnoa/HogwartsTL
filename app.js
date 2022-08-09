@@ -56,7 +56,6 @@ function removeTask(e) {
 
 function removeTaskFromLocalStorage(taskItem) {
   //check the local storage
-  let tasks;
   if (localStorage.getItem('tasks') === null) {
     tasks = [];
   } else {
